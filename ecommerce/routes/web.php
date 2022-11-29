@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +20,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/',[HomeController::class, 'HomeIndex']);
+Route::get('/checkout',[CheckoutController::class, 'Checkout']);
+Route::get('/shop',[ShopController::class, 'ShopIndex']);
+Route::get('/product',[ProductController::class, 'ProductIndex']);
+Route::get('/contact',[ContactController::class, 'ContactIndex']);
